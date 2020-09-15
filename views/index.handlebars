@@ -1,0 +1,24 @@
+<ul>
+  {{#each records}}
+  <li class="list-group-item">
+    <div class="row">
+      <div class="col-auto mr-auto">
+        <div class="icon">
+          <i class="fas fa-grin-beam"></i>
+        </div>
+        <div class="content">
+          <h3>{{this.name}}</h3>
+          <span>{{this.date}}</span>
+          <span>{{this.amount}}</span>
+        </div>
+      </div>
+
+      <div class="col-auto">
+        <button>edit</button>
+        <button>delete</button>
+      </div>
+    </div>
+
+  </li>
+  {{/each}}
+</ul>

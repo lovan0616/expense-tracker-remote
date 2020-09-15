@@ -6,5 +6,9 @@ const router = express.Router()
 const home = require('./modules/home')
 router.use('/', home)
 
+// 引入records模組
+const records = require('./modules/records')
+router.use('/records', records)
+
 // 匯出路由器
 module.exports = router
