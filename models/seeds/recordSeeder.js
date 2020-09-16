@@ -8,7 +8,8 @@ db.once('open', () => {
       name: `${recordList.results[i].name}`,
       category: `${recordList.results[i].category}`,
       date: `${recordList.results[i].date}`,
-      amount: `${recordList.results[i].amount}`
+      amount: `${recordList.results[i].amount}`,
+      icon: `${recordList.results[i].icon}`
     })
   }
   console.log( 'record seed done')

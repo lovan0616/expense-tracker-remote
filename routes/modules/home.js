@@ -11,7 +11,6 @@ router.get('/', (req, res) => {
   Record.find()
   .lean()
   .then(records => res.render('index', {records}))
-  
 })
 
 // 匯出模組
