@@ -15,7 +15,8 @@
 
       <div class="col-auto">
         <a href="/records/{{this._id}}/edit">edit</a>
-        <button>delete</button>
+        <form action="/records/{{this._id}}?_method=DELETE" method="POST">
+        <button type="submit">delete</button></form>
       </div>
     </div>
 
