@@ -1,4 +1,4 @@
-<ul>
+<ul style="overflow: scroll;">
   {{#each records}}
   <li class="list-group-item">
     <div class="row">
@@ -14,7 +14,7 @@
       </div>
 
       <div class="col-auto">
-        <button>edit</button>
+        <a href="/records/{{this._id}}/edit">edit</a>
         <button>delete</button>
       </div>
     </div>

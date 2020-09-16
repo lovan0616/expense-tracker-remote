@@ -21,5 +21,30 @@ router.post('/', (req, res) => {
   .catch(error => console.log(error))
 })
 
+router.get('/:id/edit', (req, res) => {
+  const id = req.params.id
+  Record.findById(id)
+  .lean()
+  .then(record => res.render('edit',{record}))
+})
+
+router.put('/:id', (req, res) => {
+  const id = req.params.id
+  const {name, date, category, amount} = req.body
+  Category.findOne({ name: `${category}` })
+  .then(category => category.icon)
+  .then(icon =>
+    Record.findById(id)
+    .then(record => { 
+      record.name = name
+      record.date = date
+      record.category = category
+      record.amount = amount
+      record.icon = icon 
+      return record.save()}))
+  .then(() => {res.redirect('/')})
+  .catch(error => console.log(error))
+})
+
 //匯出模組
 module.exports = router
