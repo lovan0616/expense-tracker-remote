@@ -8,6 +8,8 @@ const methodOverride = require('method-override')
 // 引用路由器
 const routes = require('./routes')
 
+// 引入record model
+const Record = require('./models/record')
 
 // 將request經過body parser處理
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -15,6 +17,14 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
 // 將request導入路由器
 app.use(routes)
+
+// 新增handlebar helper: sum功能
+const Handlebars = require('handlebars')
+Handlebars.registerHelper('sum', function (records) {
+  let sum = 0
+  records.forEach(record => sum += record.amount)
+  return sum
+  });
 
 
 
