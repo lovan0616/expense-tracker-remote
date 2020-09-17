@@ -10,5 +10,9 @@ router.use('/', home)
 const records = require('./modules/records')
 router.use('/records', records)
 
+// 引入sort模組
+const sort = require('./modules/sort')
+router.use('/sort', sort)
+
 // 匯出路由器
 module.exports = router
