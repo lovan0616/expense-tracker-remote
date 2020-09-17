@@ -3,27 +3,27 @@
     {
       "name": "housing",
       "name_ch": "家居物業",
-      "icon": "fas fa-home"
+      "icon": "fas fa-home fa-3x"
     },
     {
       "name": "transportation",
       "name_ch": "交通出行",
-      "icon": "fas fa-shuttle-van"
+      "icon": "fas fa-shuttle-van fa-3x"
     },
     {
       "name": "entertainment",
       "name_ch": "休閒娛樂",
-      "icon": "fas fa-grin-beam"
+      "icon": "fas fa-grin-beam fa-3x"
     },
     {
       "name": "food",
       "name_ch": "餐飲食品",
-      "icon": "fas fa-utensils"
+      "icon": "fas fa-utensils fa-3x"
     },
     {
       "name": "others",
       "name_ch": "其他",
-      "icon": "fas fa-pen"
+      "icon": "fas fa-pen fa-3x"
     }
   ]
 }
