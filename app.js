@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const PORT = 3000
+const PORT = process.env.PORT || 3000
 const bodyParser = require('body-parser')
 const exphbs = require('express-handlebars')
 const methodOverride = require('method-override')
@@ -25,8 +25,6 @@ Handlebars.registerHelper('sum', function (records) {
   records.forEach(record => sum += record.amount)
   return sum
   });
-
-
 
 // 引入mongoose
 require('./config/mongoose')
