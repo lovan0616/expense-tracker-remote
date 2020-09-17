@@ -34,5 +34,5 @@ app.set('view engine', 'handlebars')
 
 // Listen and start the app
 app.listen(PORT, () => {
-  console.log(`The app is listening on http://localhost:${PORT}`)
+  console.log(`App is listening on http://localhost:${PORT}`)
 })
