@@ -11,25 +11,27 @@ router.get('/new', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  const {name, date, category, amount} = req.body
+  const { name, date, category, amount } = req.body
   let icon = "fas fa-home fa-3x"
   switch (category) {
     case "transportation":
-      return "fas fa-shuttle-van fa-3x"
+      icon = "fas fa-shuttle-van fa-3x"
       break
     case "entertainment":
-      return "fas fa-grin-beam fa-3x"
+      icon = "fas fa-grin-beam fa-3x"
       break
     case "food":
-      return "fas fa-utensils fa-3x"
+      icon = "fas fa-utensils fa-3x"
       break
     case "others":
-      return "fas fa-pen fa-3x"
+      icon = "fas fa-pen fa-3x"
       break
   }
-    Record.create({ name, date, category, amount, icon })
+
+  Record.create({ name, date, category, amount, icon })
     .then(() => { res.redirect('/') })
     .catch(error => console.log(error))
+
 })
 
 router.get('/:id/edit', (req, res) => {
@@ -45,16 +47,16 @@ router.put('/:id', (req, res) => {
   let icon = "fas fa-home fa-3x"
   switch(category) {
     case "transportation":
-      return "fas fa-shuttle-van fa-3x"
+      icon = "fas fa-shuttle-van fa-3x"
       break
     case "entertainment":
-      return "fas fa-grin-beam fa-3x"
+      icon = "fas fa-grin-beam fa-3x"
       break
     case "food":
-      return "fas fa-utensils fa-3x"
+      icon = "fas fa-utensils fa-3x"
       break
     case "others":
-      return "fas fa-pen fa-3x"
+      icon = "fas fa-pen fa-3x"
       break
   }
 
