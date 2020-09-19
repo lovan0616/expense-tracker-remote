@@ -15,7 +15,7 @@ router.post('/', (req, res) => {
   const { name, date, category, amount } = req.body
   Category.findOne({ name: `${category}` })
     .then(category => category.icon)
-    .then(icon => Record.create{ name, date, category, amount, icon })
+    .then(icon => Record.create({ name, date, category, amount, icon }))
     .then(() => {res.redirect('/')})
     .catch(error => console.log(error))
   
