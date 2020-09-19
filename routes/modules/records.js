@@ -4,6 +4,7 @@ const router = express.Router()
 
 // 引入 records model
 const Record = require('../../models/record')
+const Category = require('../../models/category')
 
 //定義路由
 router.get('/new', (req, res) => {
@@ -12,26 +13,12 @@ router.get('/new', (req, res) => {
 
 router.post('/', (req, res) => {
   const { name, date, category, amount } = req.body
-  let icon = "fas fa-home fa-3x"
-  switch (category) {
-    case "transportation":
-      icon = "fas fa-shuttle-van fa-3x"
-      break
-    case "entertainment":
-      icon = "fas fa-grin-beam fa-3x"
-      break
-    case "food":
-      icon = "fas fa-utensils fa-3x"
-      break
-    case "others":
-      icon = "fas fa-pen fa-3x"
-      break
-  }
-
-  Record.create({ name, date, category, amount, icon })
-    .then(() => { res.redirect('/') })
+  Category.findOne({ name: `${category}` })
+    .then(category => category.icon)
+    .then(icon => Record.create{ name, date, category, amount, icon })
+    .then(() => {res.redirect('/')})
     .catch(error => console.log(error))
-
+  
 })
 
 router.get('/:id/edit', (req, res) => {
@@ -44,6 +31,11 @@ router.get('/:id/edit', (req, res) => {
 router.put('/:id', (req, res) => {
   const id = req.params.id
   const {name, date, category, amount} = req.body
+
+  
+
+
+
   let icon = "fas fa-home fa-3x"
   switch(category) {
     case "transportation":
