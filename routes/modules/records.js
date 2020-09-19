@@ -32,37 +32,18 @@ router.put('/:id', (req, res) => {
   const id = req.params.id
   const {name, date, category, amount} = req.body
 
-  
-
-
-
-  let icon = "fas fa-home fa-3x"
-  switch(category) {
-    case "transportation":
-      icon = "fas fa-shuttle-van fa-3x"
-      break
-    case "entertainment":
-      icon = "fas fa-grin-beam fa-3x"
-      break
-    case "food":
-      icon = "fas fa-utensils fa-3x"
-      break
-    case "others":
-      icon = "fas fa-pen fa-3x"
-      break
-  }
-
-  Record.findById(id)
-  .then(record => {
+  Category.findOne({ name: `${category}` })
+  .then(category => category.icon)
+  .then(icon => Record.findById(id)
+    .then(record => {
     record.name = name
     record.date = date
     record.category = category
     record.amount = amount
     record.icon = icon
-    return record.save()
-  })
+    return record.save()}))
   .then(() => {res.redirect('/')})
-  .catch(error => console.log(error))
+  .catch(eroor => console.log(error))
 })
 
 router.delete('/:id', (req, res) => {
