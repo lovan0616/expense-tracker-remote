@@ -13,6 +13,7 @@ router.get('/new', (req, res) => {
 
 router.post('/', (req, res) => {
   const { name, date, category, amount } = req.body
+  console.log(name, date, category, amount)
   Category.findOne({ name: `${category}` })
     .then(category => category.icon)
     .then(icon => Record.create({ name, date, category, amount, icon }))

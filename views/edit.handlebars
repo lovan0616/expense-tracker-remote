@@ -16,7 +16,9 @@
       <label class="col-sm-2 control-label">類別*：</label>
       <div class="col-sm-10">
         <select name="category" class="form-control">
-          <option>select</option>
+          <option disabled>select</option>
+          {{!-- 利用hidden屬性在選項中隱藏預設項目 --}}
+          <option hidden="hidden" value="{{record.category}}" selected>{{record.category}}</option>
           <option value="housing">家居物業</option>
           <option value="transportation">交通出行</option>
           <option value="entertainment">休閒娛樂</option>
