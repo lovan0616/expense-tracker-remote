@@ -1,12 +1,11 @@
-<div class="container d-flex flex-column align-items-center">
-  
-  {{!-- total amount --}}
-  <div class="d-flex my-2">
-    <h2>總金額：</h2>
-    <h2 style="color: #75CAEA;">{{#sum records}}{{/sum}}</h2>
-  </div>
-   
-  <ul class="record-list">
+{{!-- total amount --}}
+<div class="total-amount d-flex m-0 pl-3 py-1">
+  <h3>總金額：</h2>
+  <h3>{{#sum records}}{{/sum}}</h2>
+</div>
+
+<div class="container d-flex flex-column align-items-center mt-3">
+  <ul class="list-group record-list">
     {{#each records}}
     <li class="list-group-item list-group-item-action">
       <div class="row d-flex justify-content-between">
@@ -22,14 +21,14 @@
             <span>{{this.amount}}</span>
           </div>
         </div>
-  
+
         <div class="col-auto">
-          <a class="btn btn-outline-info mb-1" style="width: 71.11px;" href="/records/{{this._id}}/edit">edit</a>
+          <a class="btn btn-outline-info mb-1" href="/records/{{this._id}}/edit">編輯</a>
           <form action="/records/{{this._id}}?_method=DELETE" method="POST">
-            <button class="btn btn-outline-danger" type="submit">delete</button></form>
+            <button class="btn btn-outline-danger" type="submit">刪除</button></form>
         </div>
       </div>
-  
+
     </li>
     {{/each}}
   </ul>
@@ -41,7 +40,8 @@
           <input type="radio" id="housing" value="housing" name="sortedBy" onchange="this.form.submit()">
           <label for="housing" class="housing-toggle-label"><i class="fas fa-home fa-3x"></i></label>
           <input type="radio" id="transportation" value="transportation" name="sortedBy" onchange="this.form.submit()">
-          <label for="transportation" class="transportation-toggle-label"><i class="fas fa-shuttle-van fa-3x"></i></label>
+          <label for="transportation" class="transportation-toggle-label"><i
+              class="fas fa-shuttle-van fa-3x"></i></label>
           <input type="radio" id="food" value="food" name="sortedBy" onchange="this.form.submit()">
           <label for="food" class="food-toggle-label"><i class="fas fa-utensils fa-3x"></i></label>
           <input type="radio" id="entertainment" value="entertainment" name="sortedBy" onchange="this.form.submit()">
@@ -56,12 +56,12 @@
           <i class="fas fa-plus fa-2x"></i>
         </a>
       </div>
-      
-      
+
+
     </div>
   </div>
-  
-  
-  
+
+
+
 
 </div>
