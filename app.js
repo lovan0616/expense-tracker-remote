@@ -25,12 +25,32 @@ Handlebars.registerHelper('sum', function (records) {
   records.forEach(record => sum += record.amount)
   return sum
   });
+Handlebars.registerHelper('totalSpend', function() {
+  return (
+    async function() {
+      try {
+        let totalSpend = 0
+        const records = await Record.find().lean()
+        records.forEach(record => totalSpend += record.amount)
+        console.log(totalSpend)
+        return totalSpend
+      } catch (error) {
+        console.log(error)
+      }
+    }
+  )()
+})
+
 
 // 引入mongoose
 require('./config/mongoose')
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}))
 app.set('view engine', 'handlebars')
+
+// 告訴express靜態檔案位置，以利載入
+app.use(express.static('public'))
+
 
 // Listen and start the app
 app.listen(PORT, () => {

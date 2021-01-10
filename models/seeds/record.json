@@ -2,28 +2,28 @@
   "results": [
     {
       "name": "家人早餐",
-      "category": "餐飲食品",
+      "category": "food",
       "date":"2020-09-01",
       "amount": 210,
       "icon": "fas fa-utensils fa-3x"
     },
     {
       "name": "台南高鐵票",
-      "category": "交通出行",
+      "category": "transportation",
       "date": "2020-09-01",
       "amount": 1390,
       "icon": "fas fa-shuttle-van fa-3x"
     },
     {
       "name": "冰拿鐵",
-      "category": "餐飲食品",
+      "category": "food",
       "date": "2020-09-01",
       "amount": 70,
       "icon": "fas fa-utensils fa-3x"
     },
     {
       "name": "手機保護貼",
-      "category": "其他",
+      "category": "others",
       "date": "2020-09-01",
       "amount": 600,
       "icon": "fas fa-pen fa-3x"

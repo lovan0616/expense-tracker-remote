@@ -1,29 +1,12 @@
 <div class="container d-flex flex-column align-items-center">
-  {{!-- sort dropdown --}}
-  <form action="/sort" method="GET" class="mb-3">
-    <select name="sortedBy" onchange="this.form.submit()" class="selectpicker" multiple title="類別">
-      <option value="housing">家居物業</option>
-      <option value="transportation">交通出行</option>
-      <option value="food">餐飲食品</option>
-      <option value="entertainment">休閒娛樂</option>
-      <option value="others">其他</option>
-    </select>
-    <noscript><input type="submit" value="Submit"></noscript>
-  </form>
   
   {{!-- total amount --}}
   <div class="d-flex my-2">
     <h2>總金額：</h2>
     <h2 style="color: #75CAEA;">{{#sum records}}{{/sum}}</h2>
   </div>
-  
-
-  
-
- 
-  
-  
-  <ul>
+   
+  <ul class="record-list">
     {{#each records}}
     <li class="list-group-item list-group-item-action">
       <div class="row d-flex justify-content-between">
@@ -50,8 +33,35 @@
     </li>
     {{/each}}
   </ul>
+
+  <div id="wheel">
+    <div class="wheel-container d-flex flex-column align-items-center justify-content-end">
+      <div class="sort-wrapper">
+        <form action="/sort" method="GET">
+          <input type="radio" id="housing" value="housing" name="sortedBy" onchange="this.form.submit()">
+          <label for="housing" class="housing-toggle-label"><i class="fas fa-home fa-3x"></i></label>
+          <input type="radio" id="transportation" value="transportation" name="sortedBy" onchange="this.form.submit()">
+          <label for="transportation" class="transportation-toggle-label"><i class="fas fa-shuttle-van fa-3x"></i></label>
+          <input type="radio" id="food" value="food" name="sortedBy" onchange="this.form.submit()">
+          <label for="food" class="food-toggle-label"><i class="fas fa-utensils fa-3x"></i></label>
+          <input type="radio" id="entertainment" value="entertainment" name="sortedBy" onchange="this.form.submit()">
+          <label for="entertainment" class="entertainment-toggle-label"><i class="fas fa-grin-beam fa-3x"></i></label>
+          <input type="radio" id="others" value="others" name="sortedBy" onchange="this.form.submit()">
+          <label for="others" class="others-toggle-label"><i class="fas fa-pen fa-3x"></i></label>
+        </form>
+      </div>
+
+      <div class="add-wrapper">
+        <a class="add-record" href="./records/new">
+          <i class="fas fa-plus fa-2x"></i>
+        </a>
+      </div>
+      
+      
+    </div>
+  </div>
   
-  <a class="btn btn-outline-primary" href="./records/new">新增支出</a>
+  
   
 
 </div>
