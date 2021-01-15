@@ -1,7 +1,17 @@
 {{!-- total amount --}}
-<div class="total-amount d-flex m-0 pl-3 py-1">
-  <h3>總金額：</h2>
-  <h3>{{#sum records}}{{/sum}}</h2>
+<div class="secondary-nav d-flex m-0 px-3 py-1">
+  <div class="total-amount d-flex">
+    <h3>總金額：</h2>
+    <h3>{{#sum records}}{{/sum}}</h2>
+  </div>
+  <div class="search-bar">
+    <form action="/search" method="GET">
+      <label for="searchBar" class="searchBar-label">
+        <i class="fas fa-search"></i>
+      </label>
+      <input type="text" name="search" id="searchBar" placeholder="我想找...">
+    </form>
+  </div>
 </div>
 
 <div class="container d-flex flex-column align-items-center mt-3">
@@ -38,22 +48,22 @@
       <div class="sort-wrapper">
         <form action="/sort" method="GET">
           <input type="radio" id="housing" value="housing" name="sortedBy" onchange="this.form.submit()">
-          <label for="housing" class="housing-toggle-label"><i class="fas fa-home fa-3x"></i></label>
+          <label for="housing" class="housing-toggle-label"><i class="label-icon fas fa-home fa-2x"></i></label>
           <input type="radio" id="transportation" value="transportation" name="sortedBy" onchange="this.form.submit()">
           <label for="transportation" class="transportation-toggle-label"><i
-              class="fas fa-shuttle-van fa-3x"></i></label>
+              class="label-icon fas fa-shuttle-van fa-2x"></i></label>
           <input type="radio" id="food" value="food" name="sortedBy" onchange="this.form.submit()">
-          <label for="food" class="food-toggle-label"><i class="fas fa-utensils fa-3x"></i></label>
+          <label for="food" class="food-toggle-label"><i class="label-icon fas fa-utensils fa-2x"></i></label>
           <input type="radio" id="entertainment" value="entertainment" name="sortedBy" onchange="this.form.submit()">
-          <label for="entertainment" class="entertainment-toggle-label"><i class="fas fa-grin-beam fa-3x"></i></label>
+          <label for="entertainment" class="entertainment-toggle-label"><i class="label-icon fas fa-grin-beam fa-2x"></i></label>
           <input type="radio" id="others" value="others" name="sortedBy" onchange="this.form.submit()">
-          <label for="others" class="others-toggle-label"><i class="fas fa-pen fa-3x"></i></label>
+          <label for="others" class="others-toggle-label"><i class="label-icon fas fa-pen fa-2x"></i></label>
         </form>
       </div>
 
       <div class="add-wrapper">
         <a class="add-record" href="./records/new">
-          <i class="fas fa-plus fa-2x"></i>
+          新增
         </a>
       </div>
 

@@ -14,5 +14,9 @@ router.use('/records', records)
 const sort = require('./modules/sort')
 router.use('/sort', sort)
 
+// 引入search模組
+const search = require('./modules/search')
+router.use('/search', search)
+
 // 匯出路由器
 module.exports = router

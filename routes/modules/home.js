@@ -13,5 +13,6 @@ router.get('/', (req, res) => {
   .then(records => res.render('index', {records}))
 })
 
+
 // 匯出模組
 module.exports = router
