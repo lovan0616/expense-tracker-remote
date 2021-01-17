@@ -18,6 +18,27 @@
     </nav>
   </header>
 
+  {{!-- theme-select --}}
+  <div class="theme-wrapper">
+    <div class="theme-list">
+      <label class="theme green-theme-toggle" for="green-theme">
+        <input type="radio" id="green-theme" class="green-theme" name="theme">
+        <div class="theme-circle green-circle"></div>
+        
+      </label>
+      <label class="theme brown-theme-toggle" for="brown-theme">
+        <input type="radio" id="brown-theme" class="brown-theme" name="theme">
+        <div class="theme-circle brown-circle"></div>
+        
+      </label>
+      <label class="theme pink-theme-toggle" for="pink-theme">
+        <input type="radio" id="pink-theme" class="pink-theme" name="theme">
+        <div class="theme-circle pink-circle"></div>
+        
+      </label>
+    </div>
+  </div>
+
     {{{body}}}
 
   
@@ -33,6 +54,6 @@
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
   <script src="/javascript/wheel.js"></script>
-
+  <script src="/javascript/theme.js"></script>
 </body>
 </html>
